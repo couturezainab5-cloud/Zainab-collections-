@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zainab Collections — Modest Fashion · Kilifi, Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sand: #f7f3ed; --cream: #efe9df; --deep-teal: #1a3a3a;
+      --teal: #2c5f5f; --teal-light: #3d7a7a; --gold: #c8973a;
+      --gold-light: #e0b05a; --rose: #b5776a; --warm-dark: #0f2222;
+      --muted: #7a6e63; --text: #2a2018; --wa: #25D366;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--sand); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: radial-gradient(circle at 80% 10%, rgba(200,151,58,0.06) 0%, transparent 50%), radial-gradient(circle at 10% 90%, rgba(44,95,95,0.07) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+
+    /* FLOATING WA */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 999; background: var(--wa); color: #fff; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,0.38); text-decoration: none; transition: transform 0.3s; animation: wapulse 2.5s infinite; }
+    .wa-float:hover { transform: scale(1.1); }
+    @keyframes wapulse { 0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.38);}50%{box-shadow:0 6px 38px rgba(37,211,102,0.65);} }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 14px 56px; background: rgba(247,243,237,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(200,151,58,0.18); }
+    .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { width: 44px; height: 44px; background: var(--deep-teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-icon svg { width: 26px; height: 26px; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-main { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; letter-spacing: 0.06em; color: var(--deep-teal); }
+    .logo-sub { font-size: 8px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-top: 2px; }
+    .nav-bismillah { font-size: 16px; color: var(--gold); opacity: 0.65; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; font-weight: 400; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-wa { background: var(--wa); color: #fff; border: none; padding: 10px 20px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 7px; transition: all 0.3s; border-radius: 2px; }
+    .nav-wa:hover { background: #1ebe58; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 76px; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 52px 80px 68px; position: relative; z-index: 1; }
+    .hero-arabic { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--gold); margin-bottom: 12px; direction: rtl; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--teal-light); margin-bottom: 18px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 4.5vw, 68px); font-weight: 600; line-height: 1.1; color: var(--deep-teal); margin-bottom: 18px; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 14px; color: var(--muted); max-width: 400px; line-height: 1.85; margin-bottom: 12px; font-weight: 300; }
+    .hero-loc { font-size: 12px; color: var(--teal); margin-bottom: 32px; display: flex; align-items: center; gap: 6px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--deep-teal); color: var(--sand); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; padding: 16px 34px; text-decoration: none; transition: all 0.3s; font-family: 'DM Sans', sans-serif; font-weight: 400; border: none; cursor: pointer; }
+    .btn-dark:hover { background: var(--teal); transform: translateY(-2px); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: var(--wa); color: #fff; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 16px 26px; text-decoration: none; transition: all 0.3s; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+    .btn-wa:hover { background: #1ebe58; transform: translateY(-2px); }
+    .hero-right { position: relative; overflow: hidden; background: var(--deep-teal); }
+    .hero-visual { width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+    .hero-pattern { position: absolute; inset: 0; opacity: 0.08; background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23f7f3ed' stroke-width='1'%3E%3Cpolygon points='40,4 52,18 68,18 58,30 62,46 40,38 18,46 22,30 12,18 28,18'/%3E%3Crect x='30' y='30' width='20' height='20' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E"); background-size: 80px 80px; }
+    .hero-fig { width: 100%; max-width: 290px; position: relative; z-index: 2; }
+    .hero-badge { position: absolute; bottom: 44px; left: -26px; background: var(--sand); padding: 15px 20px; box-shadow: 0 14px 44px rgba(0,0,0,0.18); z-index: 10; }
+    .hero-badge-lbl { font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    .hero-badge-val { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--deep-teal); }
+    .hero-tag { position: absolute; top: 56px; right: -16px; background: var(--gold); color: var(--deep-teal); padding: 13px 16px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+    /* DELIVERY BANNER */
+    .del-banner { background: var(--deep-teal); padding: 13px 56px; display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .del-item { display: flex; align-items: center; gap: 9px; }
+    .del-icon { font-size: 17px; }
+    .del-text { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(247,243,237,0.75); }
+    .del-text b { color: var(--gold-light); font-weight: 500; }
+    .del-div { width: 1px; height: 20px; background: rgba(200,151,58,0.22); }
+
+    /* MARQUEE */
+    .marquee { background: var(--teal); padding: 12px 0; overflow: hidden; white-space: nowrap; }
+    .marquee-inner { display: inline-flex; animation: marquee 22s linear infinite; }
+    .m-item { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(247,243,237,0.72); padding: 0 24px; }
+    .m-dot { color: var(--gold); }
+    @keyframes marquee { from{transform:translateX(0);}to{transform:translateX(-50%);} }
+
+    /* SECTION */
+    section { padding: 76px 68px; position: relative; z-index: 1; }
+    .ey { font-size: 10px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .st { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3vw, 42px); font-weight: 600; line-height: 1.2; color: var(--deep-teal); }
+    .st em { font-style: italic; }
+
+    /* CATEGORIES */
+    .cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; margin-top: 40px; }
+    .cat-card { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px 16px; text-decoration: none; transition: transform 0.4s; }
+    .cat-card:hover { transform: translateY(-6px); }
+    .cat-bg { position: absolute; inset: 0; transition: transform 0.5s; }
+    .cat-card:hover .cat-bg { transform: scale(1.05); }
+    .cat-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .cat-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,34,34,0.85) 0%, rgba(15,34,34,0.2) 55%, transparent 100%); }
+    .cat-lbl { position: relative; z-index: 2; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--sand); margin-bottom: 3px; }
+    .cat-cnt { position: relative; z-index: 2; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+
+    /* ABAYAS SHOP */
+    #shop { background: var(--cream); }
+    .sec-hdr { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; }
+    .view-all { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 2px; white-space: nowrap; margin-bottom: 3px; transition: color 0.3s; }
+    .view-all:hover { color: var(--gold); }
+
+    /* FILTER TABS */
+    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-tab { padding: 8px 20px; border: 1px solid rgba(44,95,95,0.25); background: none; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: all 0.3s; border-radius: 2px; }
+    .filter-tab.active, .filter-tab:hover { background: var(--deep-teal); color: var(--sand); border-color: var(--deep-teal); }
+
+    /* PRODUCT GRID */
+    .prod-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .prod-card { position: relative; background: #fff; overflow: hidden; cursor: pointer; box-shadow: 0 2px 16px rgba(26,58,58,0.06); transition: box-shadow 0.4s, transform 0.4s; }
+    .prod-card:hover { box-shadow: 0 12px 40px rgba(26,58,58,0.14); transform: translateY(-4px); }
+    .prod-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; position: relative; }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; display: block; }
+    .prod-card:hover .prod-img img { transform: scale(1.06); }
+    .prod-ov { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px; transform: translateY(100%); transition: transform 0.35s; background: rgba(15,34,34,0.93); }
+    .prod-card:hover .prod-ov { transform: translateY(0); }
+    .prod-order { width: 100%; background: var(--wa); color: #fff; border: none; padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; font-weight: 500; display: flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; transition: background 0.3s; }
+    .prod-order:hover { background: #1ebe58; }
+    .prod-info { padding: 13px 15px 17px; }
+    .prod-tag { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    .prod-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: var(--deep-teal); margin-bottom: 6px; }
+    .prod-price { font-size: 14px; color: var(--teal); font-weight: 500; }
+    .prod-badge { position: absolute; top: 10px; left: 10px; background: var(--rose); color: white; font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; padding: 4px 8px; font-weight: 500; }
+    .prod-badge.new { background: var(--teal); }
+
+    /* HOW TO ORDER */
+    #how { background: var(--deep-teal); }
+    .how-intro { text-align: center; max-width: 520px; margin: 0 auto 48px; }
+    .how-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 40px); font-weight: 600; color: var(--sand); margin-bottom: 8px; }
+    .how-title em { font-style: italic; color: var(--gold); }
+    .how-sub { font-size: 13px; color: rgba(247,243,237,0.48); line-height: 1.8; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+    .step { background: rgba(247,243,237,0.04); padding: 30px 22px; text-align: center; border-top: 2px solid rgba(200,151,58,0.22); transition: background 0.3s; }
+    .step:hover { background: rgba(247,243,237,0.07); }
+    .step-n { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: rgba(200,151,58,0.22); line-height: 1; margin-bottom: 10px; }
+    .step-ico { font-size: 24px; margin-bottom: 10px; }
+    .step-lbl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; font-weight: 500; }
+    .step-txt { font-size: 11.5px; color: rgba(247,243,237,0.43); line-height: 1.7; }
+    .how-cta { text-align: center; margin-top: 44px; }
+    .btn-wa-lg { display: inline-flex; align-items: center; gap: 10px; background: var(--wa); color: #fff; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 17px 44px; text-decoration: none; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: all 0.3s; border-radius: 2px; }
+    .btn-wa-lg:hover { background: #1ebe58; transform: translateY(-2px); }
+
+    /* ABOUT */
+    #about { background: var(--deep-teal); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 68px; align-items: center; }
+    .about-art { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .about-art svg { width: 82%; height: 82%; opacity: 0.85; }
+    .about-border { position: absolute; inset: 0; border: 1px solid rgba(200,151,58,0.24); }
+    .about-border::before { content: ''; position: absolute; inset: 15px; border: 1px solid rgba(200,151,58,0.1); }
+    .about-title { font-family: 'Playfair Display', serif; font-size: clamp(27px, 2.8vw, 40px); font-weight: 600; line-height: 1.2; color: var(--sand); margin-bottom: 16px; }
+    .about-title em { font-style: italic; color: var(--gold); }
+    .about-txt { font-size: 13px; color: rgba(247,243,237,0.56); line-height: 1.9; margin-bottom: 13px; }
+    .about-quote { font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--gold-light); border-left: 2px solid var(--gold); padding-left: 17px; margin: 22px 0; line-height: 1.7; }
+    .vals { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .val-ico { font-size: 19px; margin-bottom: 5px; }
+    .val-lbl { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    .val-txt { font-size: 11px; color: rgba(247,243,237,0.43); line-height: 1.7; }
+
+    /* CONTACT */
+    .con-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 68px; align-items: start; position: relative; }
+    .con-deco { position: absolute; right: 0; top: -40px; font-family: 'Playfair Display', serif; font-size: 150px; font-weight: 700; color: rgba(44,95,95,0.04); pointer-events: none; line-height: 1; user-select: none; }
+    .con-sub { font-size: 13px; color: var(--muted); line-height: 1.85; margin: 12px 0 28px; }
+    .con-det { margin-bottom: 14px; }
+    .con-lbl { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    .con-val { font-size: 13.5px; color: var(--teal); }
+    .con-val a { color: var(--teal); text-decoration: none; }
+    .con-val a:hover { color: var(--gold); }
+    .con-form { display: flex; flex-direction: column; gap: 15px; }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .f-grp { display: flex; flex-direction: column; }
+    .f-grp label { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; font-weight: 500; }
+    .f-grp input, .f-grp textarea, .f-grp select { background: #fff; border: 1px solid rgba(44,95,95,0.17); color: var(--text); padding: 12px 13px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 300; outline: none; transition: border-color 0.3s; }
+    .f-grp input:focus, .f-grp textarea:focus, .f-grp select:focus { border-color: var(--gold); }
+    .f-grp textarea { resize: vertical; min-height: 96px; }
+    .sub-btn { background: var(--deep-teal); color: var(--sand); border: none; padding: 15px 38px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; align-self: flex-start; font-weight: 400; }
+    .sub-btn:hover { background: var(--teal); }
+    .f-success { display: none; color: var(--teal); font-size: 13px; padding: 12px 14px; border: 1px solid var(--gold); background: rgba(200,151,58,0.07); margin-top: 3px; }
+
+    /* FOOTER */
+    footer { background: var(--warm-dark); padding: 56px 68px 30px; }
+    .ft { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .fb-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--sand); margin-bottom: 3px; }
+    .fb-sub { font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .fb-desc { font-size: 11.5px; color: rgba(247,243,237,0.28); line-height: 1.9; }
+    .fc-ttl { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+    .fc-links { list-style: none; }
+    .fc-links li { margin-bottom: 8px; }
+    .fc-links a { font-size: 11.5px; color: rgba(247,243,237,0.36); text-decoration: none; transition: color 0.3s; }
+    .fc-links a:hover { color: var(--gold); }
+    .fb-bot { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(247,243,237,0.05); }
+    .fb-copy { font-size: 11px; color: rgba(247,243,237,0.17); letter-spacing: 0.07em; }
+    .fb-soc { display: flex; gap: 14px; }
+    .fb-soc a { font-size: 11px; letter-spacing: 0.11em; text-transform: uppercase; color: rgba(247,243,237,0.24); text-decoration: none; transition: color 0.3s; }
+    .fb-soc a:hover { color: var(--gold); }
+
+    /* ANIM */
+    .fu { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fu.on { opacity: 1; transform: translateY(0); }
+    .fu.d1 { transition-delay: 0.1s; } .fu.d2 { transition-delay: 0.2s; } .fu.d3 { transition-delay: 0.3s; }
+
+    /* WA SVG */
+    .wa-ico { display: inline-block; vertical-align: middle; }
+
+    @media(max-width:1100px){ .prod-grid{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:960px){
+      nav{padding:13px 18px;} .nav-links,.nav-bismillah{display:none;}
+      .hero{grid-template-columns:1fr;} .hero-right{height:50vh;} .hero-left{padding:36px 20px;}
+      section{padding:56px 20px;} .del-banner{padding:12px 20px;gap:14px;flex-direction:column;align-items:flex-start;}
+      .del-div{display:none;} .cat-grid{grid-template-columns:1fr 1fr;}
+      .prod-grid{grid-template-columns:1fr 1fr;} .steps{grid-template-columns:1fr 1fr;}
+      .about-grid,.con-grid{grid-template-columns:1fr;gap:32px;} .ft{grid-template-columns:1fr 1fr;gap:26px;}
+    }
+    @media(max-width:520px){ .prod-grid{grid-template-columns:1fr 1fr;} .steps{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20order%20from%20Zainab%20Collections%20%F0%9F%A4%8D" target="_blank">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-wrap">
+    <div class="logo-icon">
+      <svg viewBox="0 0 40 40" fill="none">
+        <path d="M22 8C15.373 8 10 13.373 10 20s5.373 12 12 12c1.5 0 2.94-.277 4.263-.78C23.6 33.018 20.88 34 18 34 10.268 34 4 27.732 4 20S10.268 6 18 6c2.88 0 5.6.982 7.763 2.78A11.95 11.95 0 0022 8z" fill="#c8973a"/>
+        <polygon points="30,6 31.5,10.5 36,10.5 32.25,13.5 33.75,18 30,15 26.25,18 27.75,13.5 24,10.5 28.5,10.5" fill="#c8973a"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-main">Zainab Collections</span>
+      <span class="logo-sub">Modest Fashion · Kilifi, Kenya</span>
+    </div>
+  </a>
+  <div class="nav-bismillah">﷽</div>
+  <ul class="nav-links">
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="#shop">Abayas</a></li>
+    <li><a href="#how">How to Order</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-wa" href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20I%27d%20like%20to%20order%20from%20Zainab%20Collections%20%F0%9F%A4%8D" target="_blank">
+    <svg viewBox="0 0 24 24" width="13" height="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Order Now
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left fu">
+    <div class="hero-arabic">بسم الله الرحمن الرحيم</div>
+    <div class="hero-eyebrow">New Season 2026 · Kilifi, Kenya 🇰🇪</div>
+    <h1 class="hero-title">Elegance<br/>in Every<br/><em>Layer</em></h1>
+    <p class="hero-sub">Modest, refined, and beautifully crafted — Zainab Collections celebrates the modern Muslimah with designs that honour faith and inspire confidence.</p>
+    <div class="hero-loc">📍 Based in Kilifi · Delivering across Kenya</div>
+    <div class="hero-btns">
+      <a href="#shop" class="btn-dark">Shop Abayas</a>
+      <a href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20I%27d%20like%20to%20order%20from%20Zainab%20Collections%20%F0%9F%A4%8D" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-pattern"></div>
+      <svg class="hero-fig" viewBox="0 0 280 480" fill="none">
+        <path d="M80 180 Q60 200 50 280 L45 440 Q44 460 140 460 Q236 460 235 440 L230 280 Q220 200 200 180 Z" fill="rgba(200,151,58,0.18)" stroke="rgba(200,151,58,0.5)" stroke-width="1.5"/>
+        <ellipse cx="140" cy="110" rx="55" ry="60" fill="rgba(44,95,95,0.6)" stroke="rgba(200,151,58,0.4)" stroke-width="1.5"/>
+        <ellipse cx="140" cy="100" rx="28" ry="34" fill="rgba(247,243,237,0.15)" stroke="rgba(200,151,58,0.5)" stroke-width="1"/>
+        <polygon points="140,240 145,254 160,254 148,263 153,277 140,268 127,277 132,263 120,254 135,254" fill="none" stroke="rgba(200,151,58,0.45)" stroke-width="1.2"/>
+      </svg>
+    </div>
+    <div class="hero-badge"><div class="hero-badge-lbl">Based in</div><div class="hero-badge-val">Kilifi, Kenya 🇰🇪</div></div>
+    <div class="hero-tag">20 Abayas Available</div>
+  </div>
+</div>
+
+<!-- DELIVERY BANNER -->
+<div class="del-banner">
+  <div class="del-item"><div class="del-icon">📍</div><div class="del-text"><b>Local Delivery</b> — Kilifi Town</div></div>
+  <div class="del-div"></div>
+  <div class="del-item"><div class="del-icon">🚚</div><div class="del-text"><b>FREE National Delivery</b> on orders above <b>Ksh 10,000</b></div></div>
+  <div class="del-div"></div>
+  <div class="del-item"><div class="del-icon">💬</div><div class="del-text">Order via <b>WhatsApp</b> — Fast & Easy</div></div>
+  <div class="del-div"></div>
+  <div class="del-item"><div class="del-icon">📞</div><div class="del-text"><b>+254 780 819 611</b></div></div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="m-item">20 Abayas Available</span><span class="m-dot">✦</span>
+    <span class="m-item">Premium Quality</span><span class="m-dot">✦</span>
+    <span class="m-item">Crystal & Pearl Designs</span><span class="m-dot">✦</span>
+    <span class="m-item">FREE Delivery Over Ksh 10,000</span><span class="m-dot">✦</span>
+    <span class="m-item">Order via WhatsApp</span><span class="m-dot">✦</span>
+    <span class="m-item">Based in Kilifi, Kenya 🇰🇪</span><span class="m-dot">✦</span>
+    <span class="m-item">20 Abayas Available</span><span class="m-dot">✦</span>
+    <span class="m-item">Premium Quality</span><span class="m-dot">✦</span>
+    <span class="m-item">Crystal & Pearl Designs</span><span class="m-dot">✦</span>
+    <span class="m-item">FREE Delivery Over Ksh 10,000</span><span class="m-dot">✦</span>
+    <span class="m-item">Order via WhatsApp</span><span class="m-dot">✦</span>
+    <span class="m-item">Based in Kilifi, Kenya 🇰🇪</span><span class="m-dot">✦</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="fu"><div class="ey">Shop By Category</div><h2 class="st">What Are You <em>Looking For?</em></h2></div>
+  <div class="cat-grid">
+    <a href="#shop" class="cat-card fu d1">
+      <div class="cat-bg"><img src="abaya1.jpg" alt="Abayas" loading="lazy"/></div>
+      <div class="cat-ov"></div><div class="cat-lbl">Abayas</div><div class="cat-cnt">20 Styles</div>
+    </a>
+    <a href="#shop" class="cat-card fu d2">
+      <div class="cat-bg" style="background:linear-gradient(160deg,#3d7a7a,#1a3a3a)"></div>
+      <div class="cat-ov"></div><div class="cat-lbl">Hijabs</div><div class="cat-cnt">Coming Soon</div>
+    </a>
+    <a href="#shop" class="cat-card fu d1">
+      <div class="cat-bg"><img src="abaya8.jpg" alt="Occasion Wear" loading="lazy"/></div>
+      <div class="cat-ov"></div><div class="cat-lbl">Occasion Wear</div><div class="cat-cnt">Available</div>
+    </a>
+    <a href="#shop" class="cat-card fu d2">
+      <div class="cat-bg"><img src="abaya6.jpg" alt="Sets" loading="lazy"/></div>
+      <div class="cat-ov"></div><div class="cat-lbl">Sets & Separates</div><div class="cat-cnt">Available</div>
+    </a>
+  </div>
+</section>
+
+<!-- SHOP / ABAYAS -->
+<section id="shop">
+  <div class="sec-hdr fu">
+    <div><div class="ey">Abayas Collection</div><h2 class="st">All <em>20 Pieces</em></h2></div>
+    <a href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20Please%20send%20me%20your%20full%20catalogue%20%F0%9F%A4%8D" target="_blank" class="view-all">Ask for More →</a>
+  </div>
+  <div class="prod-grid" id="prodGrid"></div>
+</section>
+
+<!-- HOW TO ORDER -->
+<section id="how">
+  <div class="how-intro fu">
+    <div class="ey" style="color:var(--gold-light)">Simple & Easy</div>
+    <h2 class="how-title">How to <em>Order</em></h2>
+    <p class="how-sub">No complicated checkout. Just WhatsApp us and we handle the rest, insha'Allah!</p>
+  </div>
+  <div class="steps">
+    <div class="step fu d1"><div class="step-n">01</div><div class="step-ico">👀</div><div class="step-lbl">Browse</div><div class="step-txt">Browse the website and find the abaya you love.</div></div>
+    <div class="step fu d2"><div class="step-n">02</div><div class="step-ico">💬</div><div class="step-lbl">WhatsApp Us</div><div class="step-txt">Tap "Order on WhatsApp" — your item details are sent automatically!</div></div>
+    <div class="step fu d1"><div class="step-n">03</div><div class="step-ico">📲</div><div class="step-lbl">Pay via M-Pesa</div><div class="step-txt">Pay easily via M-Pesa. We confirm once received.</div></div>
+    <div class="step fu d2"><div class="step-n">04</div><div class="step-ico">📦</div><div class="step-lbl">Receive Order</div><div class="step-txt">Pick up in Kilifi or get FREE delivery on orders above Ksh 10,000!</div></div>
+  </div>
+  <div class="how-cta fu">
+    <a class="btn-wa-lg" href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20I%27d%20like%20to%20place%20an%20order%20from%20Zainab%20Collections%20%F0%9F%A4%8D" target="_blank">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Start Your Order on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-art fu">
+      <div class="about-border"></div>
+      <svg viewBox="0 0 300 300" fill="none">
+        <polygon points="150,20 173,80 235,80 186,118 204,180 150,145 96,180 114,118 65,80 127,80" fill="none" stroke="rgba(200,151,58,0.7)" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="70" fill="none" stroke="rgba(200,151,58,0.28)" stroke-width="1"/>
+        <circle cx="150" cy="150" r="90" fill="none" stroke="rgba(200,151,58,0.13)" stroke-width="1"/>
+        <polygon points="150,90 161,121 195,121 168,140 179,171 150,152 121,171 132,140 105,121 139,121" fill="none" stroke="rgba(247,243,237,0.48)" stroke-width="1.2"/>
+        <circle cx="150" cy="150" r="12" fill="none" stroke="rgba(200,151,58,0.8)" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="5" fill="rgba(200,151,58,0.6)"/>
+      </svg>
+    </div>
+    <div class="fu">
+      <div class="ey" style="color:var(--gold-light)">Our Story</div>
+      <h2 class="about-title">Modesty is<br/><em>Your Strength</em></h2>
+      <p class="about-txt">Zainab Collections was born in the heart of Kilifi, Kenya — with a simple belief that every Muslimah deserves to dress beautifully while honouring her faith.</p>
+      <div class="about-quote">"And tell the believing women to lower their gaze and guard their modesty." — Quran 24:31</div>
+      <p class="about-txt">Whether you're dressing for everyday wear, a special occasion, or Eid — we have something for you. Order easily via WhatsApp! 🤍</p>
+      <div class="vals">
+        <div><div class="val-ico">🤍</div><div class="val-lbl">Halal Ethos</div><div class="val-txt">Modesty-first in every design.</div></div>
+        <div><div class="val-ico">✦</div><div class="val-lbl">Premium Quality</div><div class="val-txt">Beautiful fabrics & craftsmanship.</div></div>
+        <div><div class="val-ico">🌙</div><div class="val-lbl">Eid & Ramadan</div><div class="val-txt">Special collections every season.</div></div>
+        <div><div class="val-ico">🇰🇪</div><div class="val-lbl">Proudly Kenyan</div><div class="val-txt">Based in Kilifi, serving all Kenya.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="con-grid">
+    <div class="con-deco">Z</div>
+    <div class="fu">
+      <div class="ey">Get in Touch</div>
+      <h2 class="st">We'd Love to <em>Hear</em> From You</h2>
+      <p class="con-sub">Questions about sizes, availability, or delivery? We're here — message us anytime! 🤍</p>
+      <div class="con-det"><div class="con-lbl">WhatsApp / Phone</div><div class="con-val"><a href="https://wa.me/254780819611" target="_blank">+254 780 819 611</a></div></div>
+      <div class="con-det"><div class="con-lbl">Location</div><div class="con-val">Kilifi Town, Kilifi County, Kenya 🇰🇪</div></div>
+      <div class="con-det"><div class="con-lbl">Local Delivery</div><div class="con-val">Available within Kilifi</div></div>
+      <div class="con-det"><div class="con-lbl">National Delivery</div><div class="con-val">FREE on orders above <strong>Ksh 10,000</strong></div></div>
+      <div style="margin-top:24px">
+        <a class="btn-wa" href="https://wa.me/254780819611?text=As-salamu%20alaykum!%20I%20have%20a%20question%20%F0%9F%A4%8D" target="_blank">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="fu d1">
+      <form class="con-form" onsubmit="handleForm(event)">
+        <div class="f-row">
+          <div class="f-grp"><label>First Name</label><input type="text" placeholder="Fatima" required /></div>
+          <div class="f-grp"><label>Last Name</label><input type="text" placeholder="Omar" required /></div>
+        </div>
+        <div class="f-grp"><label>Phone / WhatsApp</label><input type="tel" placeholder="+254 7XX XXX XXX" required /></div>
+        <div class="f-grp">
+          <label>Subject</label>
+          <select><option>Order Enquiry</option><option>Size & Fit Help</option><option>Delivery Question</option><option>General Question</option></select>
+        </div>
+        <div class="f-grp"><label>Message</label><textarea placeholder="As-salamu alaykum! I'd like to know…" required></textarea></div>
+        <button type="submit" class="sub-btn">Send Message</button>
+        <div class="f-success" id="fSuccess">Wa alaykum assalam! Jazakillahu khairan. We'll reply soon, insha'Allah 🤍</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fb-name">Zainab Collections</div>
+      <div class="fb-sub">Modest Fashion · Kilifi, Kenya · Est. 2018</div>
+      <p class="fb-desc">Celebrating the beauty of modesty. Thoughtfully designed for the modern Muslimah. Proudly serving Kenya 🇰🇪</p>
+    </div>
+    <div>
+      <div class="fc-ttl">Shop</div>
+      <ul class="fc-links">
+        <li><a href="#shop">All Abayas</a></li>
+        <li><a href="#shop">Crystal Abayas</a></li>
+        <li><a href="#shop">Pearl Abayas</a></li>
+        <li><a href="#shop">Occasion Wear</a></li>
+        <li><a href="https://wa.me/254780819611" target="_blank">Ramadan Special</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-ttl">Info</div>
+      <ul class="fc-links">
+        <li><a href="https://wa.me/254780819611?text=Please%20send%20me%20your%20size%20guide" target="_blank">Size Guide</a></li>
+        <li><a href="#how">How to Order</a></li>
+        <li><a href="#contact">Delivery Info</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-ttl">Contact</div>
+      <ul class="fc-links">
+        <li><a href="https://wa.me/254780819611" target="_blank">+254 780 819 611</a></li>
+        <li><a href="#contact">📍 Kilifi, Kenya</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot">
+    <div class="fb-copy">© 2026 Zainab Collections · Kilifi, Kenya · بارك الله فيكم</div>
+    <div class="fb-soc"><a href="#">Instagram</a><a href="#">TikTok</a><a href="https://wa.me/254780819611" target="_blank">WhatsApp</a></div>
+  </div>
+</footer>
+
+<script>
+  const WA = '254780819611';
+  const waUrl = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+
+  const products = [
+    { id:1,  img:'abaya1.jpg',  name:'Crystal Trim Abaya',           tag:'Abayas', price:'Ksh 3,500',  desc:'Dark green with elegant crystal & pearl trim down the front.', badge:null },
+    { id:2,  img:'abaya2.jpg',  name:'Swirl Rhinestone Abaya',       tag:'Abayas', price:'Ksh 3,500',  desc:'Available in sage green & blush pink with wavy rhinestone detail.', badge:'2 Colours' },
+    { id:3,  img:'abaya3.jpg',  name:'V-Yoke Embroidered Abaya',     tag:'Abayas', price:'Ksh 4,000',  desc:'Pink & dark grey with embroidered V-yoke & tassel detail.', badge:'2 Colours' },
+    { id:4,  img:'abaya4.jpg',  name:'Floral Brooch Abaya',          tag:'Occasion Wear', price:'Ksh 4,500',  desc:'Dusty rose with silver floral brooches on shoulder & cuffs.', badge:'New' },
+    { id:5,  img:'abaya5.jpg',  name:'Floral Embroidery Abaya',      tag:'Abayas', price:'Ksh 4,500',  desc:'Brown with blue trim, white floral embroidery & rope belt.', badge:null },
+    { id:6,  img:'abaya6.jpg',  name:'Sequin Coord Set + Hijab',     tag:'Sets', price:'Ksh 5,000',  desc:'Purple 2-piece coord set with sequin trim. Comes with hijab!', badge:'+ Hijab' },
+    { id:7,  img:'abaya7.jpg',  name:'Diagonal Sequin Set + Hijab',  tag:'Sets', price:'Ksh 5,000',  desc:'Rust/terracotta coord set with diagonal sequin trim. Comes with hijab!', badge:'+ Hijab' },
+    { id:8,  img:'abaya8.jpg',  name:'Crystal Shoulder Abaya',       tag:'Occasion Wear', price:'Ksh 3,000',  desc:'Black & maroon with heavy crystal & rhinestone shoulder detail.', badge:'2 Colours' },
+    { id:9,  img:'abaya9.jpg',  name:'Gold Embroidered Kaftan',      tag:'Occasion Wear', price:'Ksh 3,000',  desc:'Yellow, white & green with rich gold embroidery & waist belt.', badge:'3 Colours' },
+    { id:10, img:'abaya10.jpg', name:'Feather Cuff Abaya',           tag:'Occasion Wear', price:'Ksh 3,500',  desc:'Mint green & pink with feather cuffs & elegant bow belt.', badge:'2 Colours' },
+    { id:11, img:'abaya11.jpg', name:'Pleated Cape Abaya',           tag:'Abayas', price:'Ksh 3,500',  desc:'Stunning pleated cape style in rose, navy & mauve.', badge:'3 Colours' },
+    { id:12, img:'abaya12.jpg', name:'Pearl Butterfly Abaya',        tag:'Abayas', price:'Ksh 3,500',  desc:'Black butterfly abaya scattered with premium pearls.', badge:'Best Seller' },
+    { id:13, img:'abaya13.jpg', name:'Pearl Lace Bat-Wing Abaya',    tag:'Occasion Wear', price:'Ksh 4,000',  desc:'Pink bat-wing abaya with intricate pearl & lace yoke.', badge:null },
+    { id:14, img:'abaya14.jpg', name:'White Pearl Cape Abaya',       tag:'Occasion Wear', price:'Ksh 5,500',  desc:'Luxurious white cape abaya heavily adorned with pearls.', badge:'Premium' },
+    { id:15, img:'abaya15.jpg', name:'Feather Print Abaya',          tag:'Abayas', price:'Ksh 5,500',  desc:'White abaya with stunning large gold feather rhinestone design.', badge:'Premium' },
+    { id:16, img:'abaya16.jpg', name:'Gold Stripe Abaya',            tag:'Abayas', price:'Ksh 3,500',  desc:'Maroon & black with bold gold rhinestone stripe panels.', badge:'2 Colours' },
+    { id:17, img:'abaya17.jpg', name:'Leaf Vine Abaya',              tag:'Abayas', price:'Ksh 5,500',  desc:'White abaya with delicate green leaf & vine embroidery.', badge:'Premium' },
+    { id:18, img:'abaya18.jpg', name:'Floral Vine Belted Abaya',     tag:'Abayas', price:'Ksh 3,500',  desc:'Black with colourful floral vine embroidery & rope belt.', badge:null },
+    { id:19, img:'abaya19.jpg', name:'Gold Scroll Contrast Abaya',   tag:'Abayas', price:'Ksh 4,500',  desc:'Black & beige with gold scroll print & contrast belt.', badge:null },
+    { id:20, img:'abaya20.jpg', name:'Peacock Embroidered Abaya',    tag:'Abayas', price:'Ksh 4,000',  desc:'Black & teal with stunning peacock feather embroidery.', badge:'2 Colours' },
+  ];
+
+  const grid = document.getElementById('prodGrid');
+  products.forEach((p, i) => {
+    const bdg = p.badge ? `<div class="prod-badge ${p.badge==='New'||p.badge==='Best Seller'?'new':''}">${p.badge}</div>` : '';
+    const d = i % 4 === 1 ? ' d1' : i % 4 === 2 ? ' d2' : i % 4 === 3 ? ' d3' : '';
+    const msg = `As-salamu alaykum! I'm interested in the *${p.name}* (${p.price}) from your website. Is it available? 🤍`;
+    grid.innerHTML += `
+      <div class="prod-card fu${d}">
+        ${bdg}
+        <div class="prod-img">
+          <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+          <div class="prod-ov">
+            <a class="prod-order" href="${waUrl(msg)}" target="_blank">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Order on WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="prod-info">
+          <div class="prod-tag">${p.tag}</div>
+          <div class="prod-name">${p.name}</div>
+          <div class="prod-price">${p.price}</div>
+        </div>
+      </div>`;
+  });
+
+  function handleForm(e) {
+    e.preventDefault();
+    const s = document.getElementById('fSuccess');
+    s.style.display = 'block'; e.target.reset();
+    setTimeout(() => s.style.display = 'none', 7000);
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+  setTimeout(() => document.querySelector('.hero-left').classList.add('on'), 80);
+</script>
+</body>
+</html>
